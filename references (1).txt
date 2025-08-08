@@ -1,0 +1,16 @@
+# References
+
+1. Windows Firewall Documentation  
+   https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-firewall/windows-firewall-with-advanced-security
+
+2. UFW (Uncomplicated Firewall) User Guide  
+   https://help.ubuntu.com/community/UFW
+
+3. Netsh AdvFirewall Commands  
+   https://learn.microsoft.com/en-us/windows-server/networking/technologies/netsh/netsh-advfirewall-firewall-commands
+
+4. Telnet Testing Guide  
+   https://www.ibm.com/docs/en/i/7.4?topic=concepts-testing-telnet-connection
+
+5. How Firewalls Work – Cisco Guide  
+   https://www.cisco.com/c/en/us/products/security/firewalls/what-is-a-firewall.html
