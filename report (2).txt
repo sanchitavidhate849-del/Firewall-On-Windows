@@ -1,0 +1,67 @@
+# Firewall Configuration Report
+
+## Environment:
+- OS: Windows 11 / Ubuntu 22.04 (tested separately)
+- Tools: Windows Firewall (Advanced Security), UFW
+
+---
+
+### Step 1: Open Firewall Tool
+- Windows: Opened "Windows Defender Firewall with Advanced Security"
+- Linux: Used terminal for UFW commands
+
+---
+
+### Step 2: List Current Rules
+- Windows Command:
+  netsh advfirewall firewall show rule name=all
+- Linux Command:
+  sudo ufw status numbered
+
+Output (Linux Example):
+Status: active
+To                         Action      From
+--                         ------      ----
+22                         ALLOW       Anywhere
+80                         ALLOW       Anywhere
+
+---
+
+### Step 3: Block Port 23 (Telnet)
+- Windows:  
+  netsh advfirewall firewall add rule name="Block Telnet" dir=in action=block protocol=TCP localport=23
+- Linux:  
+  sudo ufw deny 23
+
+---
+
+### Step 4: Test Rule
+- Attempted to connect using:
+  telnet 127.0.0.1 23
+- Result: Connection refused (as expected)
+
+---
+
+### Step 5: Allow SSH (Port 22) – Linux
+- Command:
+  sudo ufw allow 22
+- Output: Rule updated
+
+---
+
+### Step 6: Remove Test Rule
+- Windows:
+  netsh advfirewall firewall delete rule name="Block Telnet"
+- Linux:
+  sudo ufw delete deny 23
+
+---
+
+### Step 7: Summary of Firewall Traffic Filtering
+Firewalls filter network traffic based on rules that define allowed or blocked traffic. Rules can be based on:
+- IP addresses
+- Protocols (TCP/UDP)
+- Ports
+- Application-level policies
+
+Firewalls help prevent unauthorized access and mitigate threats.
